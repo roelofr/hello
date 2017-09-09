@@ -1,6 +1,6 @@
 {
     "name": "roelofr/hello",
-    "description": "A standard page to show to all your lost server visitors.",
+    "description": "A fallback page to show to all your lost server visitors.",
     "license": "GPL-3",
     "authors": [
         {
