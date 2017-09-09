@@ -1,0 +1,37 @@
+{
+  "name": "@roelofr/standard",
+  "description": "A standard page to show to all your lost server visitors.",
+  "license": "GPL-3",
+  "private": true,
+  "devDependencies": {
+    "@symfony/webpack-encore": "^0.11.0",
+    "autoprefixer": "^7.1.2",
+    "bulma": "^0.5",
+    "eslint": "^4.6.1",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "node-sass": "^4.5.3",
+    "postcss-loader": "^2.0.6",
+    "sass-loader": "^6.0.6",
+    "stylelint": "^8.0.0",
+    "stylelint-config-standard": "^17.0.0",
+    "stylelint-webpack-plugin": "^0.9.0"
+  },
+  "scripts": {
+    "build": "./node_modules/.bin/encore dev",
+    "watch": "./node_modules/.bin/encore dev --watch",
+    "prod": "./node_modules/.bin/encore production"
+  },
+  "browserslist": [
+    "> 5%",
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Edge versions",
+    "last 2 Opera versions",
+    "not IE >= 1"
+  ]
+}
