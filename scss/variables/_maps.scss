@@ -1,0 +1,12 @@
+/**
+ * Remove a lot of the sizes, to bring down the filesize of the CSS
+ *
+ * @author roelofr <github@roelof.io>
+ */
+
+$colors: (
+  'white': ($white, $black),
+  'primary': ($primary, $primary-invert),
+);
+
+$sizes: ();

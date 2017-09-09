@@ -1,0 +1,23 @@
+/**
+ * Tiny tweaks
+ *
+ * @author roelofr <github@roelof.io>
+ */
+
+body {
+  @include tablet {
+    overflow: hidden;
+  }
+}
+
+.hello-domain {
+  &:not(:empty) {
+    font-weight: $subtitle-strong-weight;
+  }
+
+  &:empty::after {
+    content: 'the requested domain';
+    display: inline-block;
+    font-weight: inherit;
+  }
+}
