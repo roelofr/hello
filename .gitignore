@@ -1,20 +1,13 @@
-### Hello project ###
-/dist
 
-### Linux ###
-*~
+# Created by https://www.gitignore.io/api/composer,node
 
-# temporary files which can be created if a process still has a handle open of a deleted file
-.fuse_hidden*
+### Composer ###
+composer.phar
+/vendor/
 
-# KDE directory preferences
-.directory
-
-# Linux trash folder which might appear on any partition or disk
-.Trash-*
-
-# .nfs files are created when an open file is removed but is still being accessed
-.nfs*
+# Commit your application's lock file http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file
+# You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
+# composer.lock
 
 ### Node ###
 # Logs
@@ -41,6 +34,9 @@ coverage
 
 # Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
+
+# Bower dependency directory (https://bower.io/)
+bower_components
 
 # node-waf configuration
 .lock-wscript
@@ -73,12 +69,12 @@ typings/
 # dotenv environment variables file
 .env
 
-### Composer ###
-composer.phar
-/vendor/
 
-# Commit your application's lock file http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file
-# You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
-composer.lock
 
-# End of https://www.gitignore.io/api/composer
+# End of https://www.gitignore.io/api/composer,node
+
+### Hello project ###
+
+# Static assets
+dist/
+

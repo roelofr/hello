@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+# Go to root dir
+cd "$( realpath "$( dirname "${BASH_SOURCE[0]}" )/../" )"
+
+# Prepare color vars
+C_RES=''
+C_OK=''
+C_CONTENT=''
+C_COMMAND=''
+
+# Pick colors if supported
+if [ $( tput colors ) -ge 8 ]; then
+    C_RES="$( tput sgr0 )"
+    C_OK="$( tput setaf 2 )"
+    C_CONTENT="$( tput setaf 7 )"
+    C_COMMAND="$( tput setaf 6 )"
+fi
+
+
+# Create gitignore file
+echo -e "→ ${C_COMMAND}Create tempfile${C_RES}"
+FILE="$( tempfile )"
+touch $FILE
+
+# Download content
+echo -e "→ ${C_COMMAND}Download gitignore template${C_RES}"
+CONTENT=$(curl -o- https://www.gitignore.io/api/composer,node | tee "${FILE}" > /dev/null)
+
+echo -e "→ ${C_COMMAND}Append custom content${C_CONTENT}"
+tee --append "$FILE" > /dev/null <<GITIGNORE
+
+### Hello project ###
+
+# Static assets
+dist/
+
+GITIGNORE
+
+echo -e "→ ${C_COMMAND}Move temporary file${C_RES}"
+mv "$FILE" .gitignore
+
+echo -e "${C_OK}Gitignore updated.${C_RES}"
