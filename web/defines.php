@@ -22,8 +22,13 @@ define('APP_ROOT', dirname(__DIR__));
  * @param  string     $url URL to parse
  * @return strin|null      Parsed domain, or null if invalid
  */
-function getDomainFromUrl(string $url) : ?string
+function getDomainFromUrl(?string $url) : ?string
 {
+    // Skip if empty
+    if (empty($url)) {
+        return null;
+    }
+
     $domainListManager = new DomainList();
     $domainParser = new DomainParser($domainListManager->getList());
 
@@ -43,4 +48,16 @@ function getDomainFromUrl(string $url) : ?string
     } catch (SeriouslyMalformedUrlException $e) {
         return null;
     }
+}
+
+/**
+ * Returns a domain from a set of queries.
+ */
+function getDomainFromUrls(array $domains) : ?string
+{
+    $out = null;
+    while ($out == null) {
+        $out = getDomainFromUrl(array_shift($domains));
+    }
+    return $out;
 }

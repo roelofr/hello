@@ -6,11 +6,12 @@ namespace Roelofr\Hello;
 require_once __DIR__ . '/defines.php';
 require_once APP_ROOT . '/vendor/autoload.php';
 
-// Figure out the domain
-$url = $_SERVER['HELLO_HOST'] ?? $_REQUEST['ref'] ?? '';
-
 // Get the domain name
-$domain = getDomainFromUrl($url);
+$domain = getDomainFromUrls([
+    $_REQUEST['ref'] ?? null,
+    $_SERVER['HELLO_HOST'] ?? null,
+    $_SERVER['HTTP_HOST'] ?? null
+]);
 
 // Get the HTML path
 $htmlPath = APP_ROOT . '/html/index.html';
